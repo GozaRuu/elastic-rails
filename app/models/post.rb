@@ -12,4 +12,26 @@ class Post < ApplicationRecord
       indexes :published, type: :boolean
     end
   end
+
+  def self.search_published(query)
+    search(
+      query: {
+        bool: {
+          must: [
+            {
+              multi_match: {
+                query: query,
+                fields: %i[author title body tags]
+              }
+            },
+            {
+              match: {
+                published: true
+              }
+            }
+          ]
+        }
+      }
+    )
+  end
 end
