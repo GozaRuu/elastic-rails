@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/elastic/elasticsearch-rails.git
+  revision: 7dd63debddb8684e02b5e1855c944c238271e23f
+  branch: master
+  specs:
+    elasticsearch-model (7.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (7.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -74,10 +85,21 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    elasticsearch (7.6.0)
+      elasticsearch-api (= 7.6.0)
+      elasticsearch-transport (= 7.6.0)
+    elasticsearch-api (7.6.0)
+      multi_json
+    elasticsearch-transport (7.6.0)
+      faraday (~> 1)
+      multi_json
     erubi (1.9.0)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
@@ -99,6 +121,8 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     msgpack (1.3.3)
+    multi_json (1.14.1)
+    multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -203,6 +227,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  elasticsearch-model!
+  elasticsearch-rails!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
